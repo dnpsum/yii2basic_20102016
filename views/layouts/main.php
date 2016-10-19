@@ -44,6 +44,7 @@ AppAsset::register($this);
             ['label' => '<span class="glyphicon glyphicon-home"></span> หน้าแรก', 'url' => ['/site/index']],
             ['label' => '<span class="glyphicon glyphicon-book"></span> เกี่ยวกับ', 'url' => ['/site/about']],
             ['label' => '<span class="glyphicon glyphicon-map-marker"></span> ติดต่อ', 'url' => ['/site/contact']],
+            ['label' => '<span class="glyphicon glyphicon-map-marker"></span> รายงาน1', 'url' => ['/first1/index']],
             Yii::$app->user->isGuest ? (
                 ['label' => '<span class="glyphicon glyphicon-thumbs-up"></span> เข้าระบบ', 'url' => ['/site/login']]
             ) : (
