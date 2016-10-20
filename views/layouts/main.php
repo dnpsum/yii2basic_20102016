@@ -39,7 +39,16 @@ AppAsset::register($this);
     
     $setting = [
         ['label' => '<span class="glyphicon glyphicon-list"></span> สถานะคอมพิวเตอร์', 'url' => ['/comstatus']],
-        
+        ['label' => '<span class="glyphicon glyphicon-list"></span> ประเภทคอมพิวเตอร์', 'url' => ['/comtype']],
+    ];
+    
+    $regist = [
+        ['label' => '<span class="glyphicon glyphicon-list"></span> ทะเบียนคอมพิวเตอร์', 'url' => ['/com']],
+    ];
+    
+    $report = [
+        ['label' => '<span class="glyphicon glyphicon-list"></span> รายงานประเภทคอม', 'url' => ['/reportcomtype']],
+        ['label' => '<span class="glyphicon glyphicon-list"></span> รายงานปัญหาคอม', 'url' => ['/reportcomservice']],
     ];
     
     echo Nav::widget([
@@ -48,9 +57,9 @@ AppAsset::register($this);
         'encodeLabels' => false, //เอาไว้ใส่ icon glyphicon
         'items' => [
             ['label' => '<span class="glyphicon glyphicon-home"></span> หน้าแรก', 'url' => ['/site/index']],
-            ['label' => '<span class="glyphicon glyphicon-book"></span> เกี่ยวกับ', 'url' => ['/site/about']],
-            ['label' => '<span class="glyphicon glyphicon-map-marker"></span> ติดต่อ', 'url' => ['/site/contact']],
-            ['label' => '<span class="glyphicon glyphicon-map-marker"></span> รายงาน1', 'url' => ['/first1/index']],
+            ['label' => '<span class="glyphicon glyphicon-map-marker"></span> ลงทะเบียน', 'items' => $regist],
+            ['label' => '<span class="glyphicon glyphicon-book"></span> รายงาน', 'items' => $report],
+            ['label' => '<span class="glyphicon glyphicon-map-marker"></span> ทดสอบ', 'url' => ['/first1/index']],
             ['label' => '<span class="glyphicon glyphicon-map-marker"></span> ตั้งค่าระบบ', 'items' => $setting],
             Yii::$app->user->isGuest ? (
                 ['label' => '<span class="glyphicon glyphicon-thumbs-up"></span> เข้าระบบ', 'url' => ['/site/login']]
